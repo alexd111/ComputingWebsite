@@ -1,0 +1,70 @@
+<html>
+<body>
+<body onload="initialize()">
+    
+</body>
+<head>
+
+
+
+<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+
+<style type="text/css">
+
+body 
+	{
+	background-color:EBEBEB;
+	font-family: 'Lato',sans-serif;
+	}
+	h1 {font-size:60px;}
+	p {font-size:30px;}
+</style> 
+</head>
+
+<h1>Website Title</h1>
+
+<p>Results...</p>
+<!-- Load the Google Maps API-->
+<div id="map_canvas" style="width:75%; height:75%"></div>
+<script type="text/javascript"
+      src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDi-c7k32mzNlUB6spEbBTdMiaq8YL-888&sensor=false">
+</script>
+
+
+<script type="text/javascript">
+      function initialize() {
+	  
+		var mapboundries
+		<!-- Set map parameters-->
+        var mapOptions = {
+          center: new google.maps.LatLng(54.00366, -2.547855),
+          zoom: 6,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map = new google.maps.Map(document.getElementById("map_canvas"),
+            mapOptions);
+		<!--Set up boundries of the postcode entered
+		<!--var boundaryCoords = [
+		<!--	new google.maps.LatLng(25.774252, -80.190262),
+			<!--new google.maps.LatLng(18.466465, -66.118292),
+			<!--new google.maps.LatLng(32.321384, -64.75737),
+			<!--new google.maps.LatLng(25.774252, -80.190262)
+		<!--]; //-->
+		
+		<!--Construct the polygon-->
+		mapboundries = new google.maps.Polygon({
+			paths: boundaryCoords,
+			strokeColor: "#FF0000",
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: "##FF0000",
+			fillOpacity: 0.35
+		});
+		
+	mapboundries.setMap(map);
+		
+      }
+    </script>
+
+<body>
+<html>
